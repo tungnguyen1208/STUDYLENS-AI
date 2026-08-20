@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudyLens AI for YouTube</title>
+    <meta name="description" content="Interactive AI-powered YouTube learning companion with timestamp-anchored knowledge checks, transcript sync, and automatic review navigation." />
+    <meta property="og:title" content="StudyLens AI for YouTube" />
+    <meta property="og:description" content="Interactive AI-powered YouTube learning companion with timestamp-anchored knowledge checks, transcript sync, and automatic review navigation." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script>
+      // Ensure window.fetch has both getter and setter to prevent "Cannot set property fetch of #<Window> which has only a getter"
+      (function() {
+        try {
+          var origFetch = typeof window !== 'undefined' && window.fetch ? window.fetch.bind(window) : function() { return Promise.reject(new Error('Fetch not available')); };
+          var _currentFetch = origFetch;
+          Object.defineProperty(window, 'fetch', {
+            get: function() {
+              return _currentFetch;
+            },
+            set: function(fn) {
+              _currentFetch = fn;
+            },
+            configurable: true,
+            enumerable: true
+          });
+        } catch (e) {
+          // Graceful fallback
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

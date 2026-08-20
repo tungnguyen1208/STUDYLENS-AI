@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyLens AI for YouTube</title>
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+  <div id="sidepanel-root">
+    <!-- Header -->
+    <header class="header">
+      <div class="brand">
+        <div class="logo">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+        </div>
+        <div>
+          <h1 class="title">StudyLens AI</h1>
+          <p class="subtitle">YouTube Study Companion</p>
+        </div>
+      </div>
+      <span id="sync-badge" class="badge badge-searching">SEARCHING...</span>
+    </header>
+
+    <!-- Video Info Card -->
+    <section class="video-card" id="video-card">
+      <div class="video-meta">
+        <h2 id="video-title" class="video-title">Looking for active YouTube video...</h2>
+        <p id="video-channel" class="video-channel">Please open any video on YouTube (youtube.com/watch?v=...)</p>
+      </div>
+      <div class="time-bar" id="time-bar">
+        <span id="time-current">00:00</span>
+        <div class="progress-track">
+          <div id="progress-fill" class="progress-fill" style="width: 0%;"></div>
+        </div>
+        <span id="time-total">00:00</span>
+      </div>
+    </section>
+
+    <!-- Status Banner (Dynamic diagnostics) -->
+    <section id="status-banner" class="status-banner" style="display: none;"></section>
+
+    <!-- Quick Actions -->
+    <section class="action-grid">
+      <button id="btn-sync" class="btn btn-secondary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
+        </svg>
+        <span>Resync Video</span>
+      </button>
+      <button id="btn-trigger-quiz" class="btn btn-primary" disabled>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+        </svg>
+        <span>Ask Checkpoint</span>
+      </button>
+    </section>
+
+    <!-- Quiz & Learning Area -->
+    <main id="quiz-container" class="quiz-container">
+      <div class="empty-state" id="empty-state">
+        <div class="empty-icon" id="empty-icon">🔍</div>
+        <h3 class="empty-title" id="empty-title">Waiting for YouTube Video</h3>
+        <p class="empty-desc" id="empty-desc">
+          StudyLens will automatically sync with your video player when you open a YouTube watch page.
+        </p>
+      </div>
+    </main>
+
+    <!-- Review Queue Section -->
+    <section class="review-section">
+      <div class="section-header">
+        <span class="section-title">Review Queue</span>
+        <span id="review-count" class="pill">0 items</span>
+      </div>
+      <div id="review-list" class="review-list">
+        <p class="review-empty">No review items currently pending.</p>
+      </div>
+    </section>
+  </div>
+  <script src="sidepanel.js"></script>
+</body>
+</html>

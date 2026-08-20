@@ -1,0 +1,6 @@
+{
+  "name": "StudyLens AI for YouTube",
+  "description": "Interactive AI-powered YouTube learning extension & companion with timestamp-anchored knowledge checks, transcript sync, and automatic review navigation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
